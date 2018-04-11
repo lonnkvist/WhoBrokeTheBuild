@@ -24,6 +24,7 @@ body {
 
 .carousel-inner .item img {
     min-height: 820px;
+    max-height: 820px;
     margin-left: auto;
     margin-right: auto;
 }
