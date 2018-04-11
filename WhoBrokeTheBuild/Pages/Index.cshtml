@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    bool first = true;
+}
+
+@if (Model.Breakers.Count == 0)
+{
+    <br/><br/>
+    <p>None</p>
+    return;
+}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <div class="carousel-inner" role="listbox">
+        @foreach (var breaker in Model.Breakers)
+        {
+            <div class="item @(first ? "active" : null)">
+                <img src="@breaker.Value.Image" alt="" class="img-responsive" />
+                <div class="carousel-caption" role="option">
+                    <h2>
+                        <strong>@breaker.Value.Name</strong> broke <strong>@breaker.Key</strong>
+                    </h2>
+                </div>
+            </div>
+            first = false;
+        }
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
