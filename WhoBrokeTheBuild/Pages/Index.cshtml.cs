@@ -59,11 +59,6 @@ namespace WhoBrokeTheBuild.Pages
                             guilty.Image = "/images/clown.jpg";
 
                         Breakers.Add(build.Key, guilty);
-                        
-                        Breakers.Add(build.Key+"0", _settings.Users.First());
-                        Breakers.Add(build.Key+"1", _settings.Users.Skip(1).First());
-                        Breakers.Add(build.Key+"2", _settings.Users.Skip(2).First());
-                        Breakers.Add(build.Key+"3", _settings.Users.Skip(3).First());
                     }
                 }
             }
