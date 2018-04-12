@@ -19,8 +19,9 @@
                 <img src="@breaker.Value.Image" alt="" class="img-responsive" />
                 <div class="carousel-caption" role="option">
                     <h2>
-                        <strong>@breaker.Value.Name</strong> broke <strong>@breaker.Key</strong>
+                        <strong>@breaker.Value.Name</strong> broke <strong>@breaker.Key.BranchName</strong>
                     </h2>
+                    <p>Project: @breaker.Key.BuildType.ProjectName -> @breaker.Key.BuildType.Name</p>
                 </div>
             </div>
             first = false;

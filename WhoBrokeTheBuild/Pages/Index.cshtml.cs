@@ -14,7 +14,7 @@ namespace WhoBrokeTheBuild.Pages
     {
         private static readonly HttpClient Client = new HttpClient();
         private static Settings _settings;
-        public Dictionary<string, User> Breakers { get; } = new Dictionary<string, User>();
+        public Dictionary<BuildDetailed, User> Breakers { get; } = new Dictionary<BuildDetailed, User>();
 
         public IndexModel(IOptions<Settings> settings)
         {
@@ -58,7 +58,7 @@ namespace WhoBrokeTheBuild.Pages
                         if (String.IsNullOrEmpty(guilty.Image))
                             guilty.Image = "/images/clown.jpg";
 
-                        Breakers.Add(build.Key, guilty);
+                        Breakers.Add(details, guilty);
                     }
                 }
             }
